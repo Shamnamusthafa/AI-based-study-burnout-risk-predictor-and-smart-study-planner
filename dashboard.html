@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard</title>
+
+    <style>
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+        }
+
+        .navbar {
+            background: #4f46e5;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 40px auto;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+
+            text-align: center;
+
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .card h2 {
+            color: #4f46e5;
+        }
+
+        .card p {
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .btn {
+            display: inline-block;
+
+            margin-top: 15px;
+
+            padding: 12px 20px;
+
+            background: #4f46e5;
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 6px;
+        }
+
+        @media (max-width: 768px) {
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+    <div class="navbar">
+
+        <h1>📊 AI Study Planner Dashboard</h1>
+
+    </div>
+
+
+    <div class="container">
+
+        <div class="cards">
+
+
+            <!-- STUDY PLAN -->
+
+            <div class="card">
+
+                <h2>📅 Study Plan</h2>
+
+                <p>
+                    Create your personalized study schedule.
+                </p>
+
+                <a href="/planner" class="btn">
+                    Create Plan
+                </a>
+
+            </div>
+
+
+            <!-- BURNOUT -->
+
+            <div class="card">
+
+                <h2>🔥 Burnout Risk</h2>
+
+                <p>
+                    Check your study habits and burnout risk.
+                </p>
+
+                <a href="/burnout" class="btn">
+                    Check Risk
+                </a>
+
+            </div>
+
+
+            <!-- HOME -->
+
+            <div class="card">
+
+                <h2>🏠 Home</h2>
+
+                <p>
+                    Return to the main page.
+                </p>
+
+                <a href="/" class="btn">
+                    Go Home
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

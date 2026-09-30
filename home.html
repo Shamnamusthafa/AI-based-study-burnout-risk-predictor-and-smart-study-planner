@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Study Planner Home</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #333;
+        }
+
+        .navbar {
+            background: #4f46e5;
+            color: white;
+            padding: 20px 40px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar h2 {
+            margin: 0;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 40px auto;
+        }
+
+        .welcome {
+            background: white;
+            padding: 40px;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+
+        .welcome h1 {
+            color: #4f46e5;
+        }
+
+        .welcome p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 12px;
+
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+
+        .card h2 {
+            color: #4f46e5;
+        }
+
+        .card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .btn {
+            display: inline-block;
+
+            margin-top: 15px;
+
+            padding: 12px 20px;
+
+            background: #4f46e5;
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 6px;
+        }
+
+        .plan {
+            background: #eef2ff;
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: left;
+        }
+
+        @media (max-width: 768px) {
+
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+    <!-- NAVIGATION -->
+
+    <div class="navbar">
+
+        <h2>📚 AI Study Planner</h2>
+
+        <div class="nav-links">
+
+            <a href="/">
+                Home
+            </a>
+
+            <a href="/planner">
+                Study Plan
+            </a>
+
+            <a href="/burnout">
+                Burnout
+            </a>
+
+            <a href="/dashboard">
+                Dashboard
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="container">
+
+
+        <!-- WELCOME -->
+
+        <div class="welcome">
+
+            <h1>
+                Welcome to Your Study Planner 🎓
+            </h1>
+
+            <p>
+                Create a personalized study plan,
+                monitor your study habits and
+                check your burnout risk.
+            </p>
+
+            <a href="/planner" class="btn">
+                📅 Create Study Plan
+            </a>
+
+        </div>
+
+
+        <!-- FEATURES -->
+
+        <div class="cards">
+
+
+            <!-- STUDY PLAN -->
+
+            <div class="card">
+
+                <h2>📅 Study Planner</h2>
+
+                <p>
+                    Create a study schedule by
+                    entering your subject,
+                    study hours and number of days.
+                </p>
+
+                <a href="/planner" class="btn">
+                    Create Plan
+                </a>
+
+            </div>
+
+
+            <!-- BURNOUT -->
+
+            <div class="card">
+
+                <h2>🔥 Burnout Predictor</h2>
+
+                <p>
+                    Check your study hours,
+                    sleep, breaks, stress and tasks.
+                </p>
+
+                <a href="/burnout" class="btn">
+                    Check Risk
+                </a>
+
+            </div>
+
+
+            <!-- DASHBOARD -->
+
+            <div class="card">
+
+                <h2>📊 Dashboard</h2>
+
+                <p>
+                    Access all your study
+                    management tools.
+                </p>
+
+                <a href="/dashboard" class="btn">
+                    Open Dashboard
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- GENERATED PLAN -->
+
+        {% if plan %}
+
+        <div class="welcome" style="margin-top: 30px;">
+
+            <h2>
+                📖 Your Generated Study Plan
+            </h2>
+
+            {% for day in plan %}
+
+            <div class="plan">
+
+                <h3>
+                    Day {{ day.day }}
+                </h3>
+
+                <p>
+                    📘 {{ day.session1 }}
+                </p>
+
+                <p>
+                    📗 {{ day.session2 }}
+                </p>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+        {% endif %}
+
+
+    </div>
+
+</body>
+
+</html>
